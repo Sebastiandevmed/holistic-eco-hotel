@@ -30,7 +30,7 @@ function LobbyBeforeAfter() {
     <section style={{ background: 'var(--bone)', padding: 'clamp(64px, 10vw, 128px) 24px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto 48px' }}>
         <SectionHeading
-          eyebrow="05 · Lobby & recepción"
+          eyebrow="04 · Lobby & recepción"
           title="Dos lobbies. Un solo gesto."
           lead="Una recepción que es también sala de estar. Arrastra para ver el detalle del interiorismo."
         />

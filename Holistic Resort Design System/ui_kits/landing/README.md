@@ -12,8 +12,8 @@ Hi-fi recreation of the Holistic Eco·Hotel marketing landing page. Built as a s
 | `Navbar.jsx` | Fixed translucent navbar that turns opaque on scroll. Centered wordmark, hamburger left, Reserve CTA right. |
 | `HeroSection.jsx` | Day/night hero with a continuously-floating Italiana "HOLISTIC" title (each letter has its own slow oscillation). Reads `hours >= 18` on mount; `?mode=day\|night` overrides for review. |
 | `WelcomeSection.jsx` | Drone + nature 3-image grid with the philosophy text. |
-| `RoomsShowcase.jsx` | Horizontal-scroll gallery of 8 rooms with progress bar. |
-| `VillasSection.jsx` | 5 villa cards with 3D tilt on hover. |
+| `TheCabin.jsx` | The single accommodation type ("La cabaña"). All cabins are identical, so this shows one feature image + a gallery of the same cabin from many angles + one spec card. Replaces the old per-unit rooms/villas sections. |
+| `PoolAndVillas.jsx` | `PoolMasonry` — the "Zonas comunes" (shared common areas): pool, river and outdoor kitchens in a masonry grid. |
 | `LobbyBeforeAfter.jsx` | Drag-to-compare before/after slider for the lobby. |
 | `BarSection.jsx` | Full-bleed parallax bar section. |
 | `CtaSection.jsx` | Final conversion section with two buttons. |

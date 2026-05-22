@@ -22,7 +22,7 @@ function Navbar({ mode = 'day' }) {
     ? (isNight ? '1px solid rgba(212,220,235,0.08)' : '1px solid rgba(42,37,32,0.08)')
     : '1px solid transparent';
 
-  const links = ['El lugar', 'Habitaciones', 'Villas', 'Bar', 'Contacto'];
+  const links = ['El lugar', 'La cabaña', 'Zonas comunes', 'Bar', 'Contacto'];
 
   return (
     <nav style={{
