@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Motion</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:22px 26px;color:var(--ink);font-family:var(--font-body)}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:10px}
+  h4{font-family:var(--font-display);font-weight:400;margin:0 0 16px;font-size:18px}
+  .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:start}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  td{padding:7px 0;border-bottom:1px dashed var(--border);vertical-align:middle}
+  td:first-child{color:var(--stone);font-family:var(--font-mono);font-size:11px;width:140px}
+  td b{color:var(--ink);font-weight:600}
+  svg{width:100%;height:140px;display:block;background:var(--linen);border-radius:10px;padding:10px;box-sizing:border-box}
+  .legend{display:flex;gap:14px;font-size:11px;color:var(--stone);margin-top:8px;font-family:var(--font-mono)}
+  .legend i{display:inline-block;width:10px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Foundations · Motion</div>
+  <h4>Easing — slow exits, no overshoot</h4>
+  <div class="grid">
+    <table>
+      <tr><td>--ease-organic</td><td><b>cubic-bezier(0.22, 1, 0.36, 1)</b><br><span style="color:var(--stone)">primary · hovers, reveals, modals</span></td></tr>
+      <tr><td>--ease-luxury</td><td><b>cubic-bezier(0.65, 0, 0.35, 1)</b><br><span style="color:var(--stone)">sigmoid · buttons, sliders</span></td></tr>
+      <tr><td>--ease-drift</td><td><b>cubic-bezier(0.45, 0, 0.55, 1)</b><br><span style="color:var(--stone)">symmetric · ken-burns, parallax</span></td></tr>
+      <tr><td>--dur-fast</td><td><b>180ms</b> · tap response</td></tr>
+      <tr><td>--dur-base</td><td><b>320ms</b> · hover · default</td></tr>
+      <tr><td>--dur-slow</td><td><b>600ms</b> · section reveal</td></tr>
+      <tr><td>--dur-ambient</td><td><b>1200ms</b> · ken-burns loop</td></tr>
+    </table>
+    <div>
+      <svg viewBox="0 0 200 120" preserveAspectRatio="none">
+        <path d="M0,120 C44,120 72,0 200,0" stroke="#4E5B3C" stroke-width="2" fill="none"/>
+        <path d="M0,120 C130,120 70,0 200,0" stroke="#C68A3C" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+        <path d="M0,120 C40,120 160,0 200,0" stroke="#A14E2A" stroke-width="2" fill="none" stroke-dasharray="2 4"/>
+      </svg>
+      <div class="legend"><span><i style="background:#4E5B3C"></i>organic</span><span><i style="background:#C68A3C"></i>luxury</span><span><i style="background:#A14E2A"></i>drift</span></div>
+    </div>
+  </div>
+</div>
+</body></html>

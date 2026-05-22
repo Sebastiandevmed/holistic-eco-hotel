@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holistic · Design System</title>
+  <link rel="stylesheet" href="../colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bone); color:var(--ink); font-family:var(--font-body); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 24px 90px; }
+    a.back { font-family:var(--font-mono); font-size:12px; color:var(--forest); text-decoration:none; }
+    h1 { font-family:var(--font-display); font-weight:400; font-size:clamp(34px,6vw,56px); margin:14px 0 6px; }
+    .lede { color:var(--fg-muted); margin:0 0 44px; }
+    h2.group { font-family:var(--font-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--forest); margin:38px 0 14px; }
+    .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); }
+    a.item { display:block; text-decoration:none; color:inherit; background:var(--bg-elevated,#fff); border:1px solid var(--border); border-radius:var(--radius-md); padding:16px 18px; font-size:var(--fs-body-sm); transition:border-color .2s ease, transform .2s ease; }
+    a.item:hover { border-color:var(--forest); transform:translateY(-2px); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="../../index.html">← Inicio</a>
+    <h1>Design System</h1>
+    <p class="lede">Fundamentos visuales de Holistic Eco·Hotel.</p>
+    <h2 class="group">Paletas</h2>
+    <div class="grid">
+      <a class="item" href="palette-warm.html">palette warm</a>
+      <a class="item" href="palette-night.html">palette night</a>
+      <a class="item" href="palette-accents.html">palette accents</a>
+      <a class="item" href="palette-botanical.html">palette botanical</a>
+      <a class="item" href="palette-semantic.html">palette semantic</a>
+    </div>
+    <h2 class="group">Tipografía</h2>
+    <div class="grid">
+      <a class="item" href="type-display.html">type display</a>
+      <a class="item" href="type-headings.html">type headings</a>
+      <a class="item" href="type-body.html">type body</a>
+      <a class="item" href="type-scale.html">type scale</a>
+      <a class="item" href="type-pairings.html">type pairings</a>
+    </div>
+    <h2 class="group">Componentes</h2>
+    <div class="grid">
+      <a class="item" href="buttons.html">buttons</a>
+      <a class="item" href="cards.html">cards</a>
+      <a class="item" href="badges-tags.html">badges tags</a>
+      <a class="item" href="form-inputs.html">form inputs</a>
+    </div>
+    <h2 class="group">Fundamentos</h2>
+    <div class="grid">
+      <a class="item" href="logo-system.html">logo system</a>
+      <a class="item" href="iconography.html">iconography</a>
+      <a class="item" href="imagery.html">imagery</a>
+      <a class="item" href="shadows.html">shadows</a>
+      <a class="item" href="spacing-radii.html">spacing radii</a>
+      <a class="item" href="motion.html">motion</a>
+      <a class="item" href="time-of-day.html">time of day</a>
+    </div>
+  </main>
+</body>
+</html>

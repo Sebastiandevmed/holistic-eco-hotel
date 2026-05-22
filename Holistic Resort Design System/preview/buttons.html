@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:22px 26px;color:var(--ink);font-family:var(--font-body)}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:10px}
+  h4{font-family:var(--font-display);font-weight:400;margin:0 0 16px;font-size:18px}
+  .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+  .lbl{font-family:var(--font-mono);font-size:10.5px;color:var(--stone);min-width:90px}
+  .btn{font-family:var(--font-body);font-weight:500;font-size:14px;letter-spacing:0.04em;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:all 320ms cubic-bezier(0.22,1,0.36,1)}
+  .btn-primary{background:#C68A3C;color:#fff;box-shadow:0 1px 2px rgba(42,37,32,0.10)}
+  .btn-primary:hover{background:#B07628;transform:translateY(-1px);box-shadow:0 6px 18px rgba(198,138,60,0.30)}
+  .btn-secondary{background:transparent;color:#2A2520;border:1px solid rgba(42,37,32,0.24);padding:12px 25px}
+  .btn-secondary:hover{background:#2A2520;color:#F6F1E7;border-color:#2A2520}
+  .btn-ghost{background:transparent;color:#2A2520;padding:13px 12px}
+  .btn-ghost:hover{color:#C68A3C}
+  .btn-arr::after{content:"→";font-family:var(--font-display);transition:transform 320ms}
+  .btn-arr:hover::after{transform:translateX(4px)}
+  .btn-night{background:transparent;color:#F2E8C8;border:1px solid rgba(242,232,200,0.4);padding:12px 25px}
+  .btn-night:hover{box-shadow:0 0 28px rgba(242,232,200,0.35);border-color:#F2E8C8}
+  .scrim{background:#0B0F1A;padding:18px 20px;border-radius:12px;display:flex;gap:14px;align-items:center}
+  .btn[disabled]{opacity:0.4;cursor:not-allowed}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Component · Buttons</div>
+  <h4>Pill buttons — confident, never bouncy</h4>
+  <div class="row">
+    <span class="lbl">Primary</span>
+    <button class="btn btn-primary btn-arr">Reservar</button>
+    <button class="btn btn-primary btn-arr">Reservar ahora</button>
+    <button class="btn btn-primary" disabled>Reservar</button>
+  </div>
+  <div class="row">
+    <span class="lbl">Secondary</span>
+    <button class="btn btn-secondary btn-arr">Explorar el lugar</button>
+    <button class="btn btn-ghost btn-arr">Ver galería</button>
+  </div>
+  <div class="row">
+    <span class="lbl">Night</span>
+    <div class="scrim"><button class="btn btn-night btn-arr">Reservar</button><button class="btn btn-night btn-arr">Contáctanos</button></div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Semantic colors</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:22px 24px;font-family:var(--font-body);color:var(--ink)}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:middle}
+  th{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--stone);font-weight:600}
+  .dot{width:22px;height:22px;border-radius:6px;display:inline-block;vertical-align:middle;margin-right:10px;border:1px solid var(--border)}
+  code{font-family:var(--font-mono);font-size:11px;background:transparent;color:var(--ink);padding:0}
+  .role{color:var(--stone)}
+  h4{font-family:var(--font-display);font-weight:400;margin:0 0 12px;font-size:18px}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);margin-bottom:4px;font-weight:500}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Foundation · 05</div>
+  <h4>Semantic tokens — day mode</h4>
+  <table>
+    <thead><tr><th></th><th>Token</th><th>Resolves to</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td><span class="dot" style="background:#F6F1E7"></span></td><td><code>--bg</code></td><td><code>bone</code></td><td class="role">Page background</td></tr>
+      <tr><td><span class="dot" style="background:#ECE3D2"></span></td><td><code>--bg-muted</code></td><td><code>linen</code></td><td class="role">Muted surface</td></tr>
+      <tr><td><span class="dot" style="background:#2A2520"></span></td><td><code>--fg</code></td><td><code>ink</code></td><td class="role">Body text</td></tr>
+      <tr><td><span class="dot" style="background:#7A6B58"></span></td><td><code>--fg-muted</code></td><td><code>stone</code></td><td class="role">Secondary text / captions</td></tr>
+      <tr><td><span class="dot" style="background:#C68A3C"></span></td><td><code>--accent</code></td><td><code>amber</code></td><td class="role">Primary CTA, links on hover</td></tr>
+      <tr><td><span class="dot" style="background:#4E5B3C"></span></td><td><code>--brand</code></td><td><code>moss</code></td><td class="role">Section accents, badges</td></tr>
+      <tr><td><span class="dot" style="background:#A14E2A"></span></td><td><code>--danger</code></td><td><code>terracotta</code></td><td class="role">Form errors, urgent</td></tr>
+      <tr><td><span class="dot" style="background:#6B8E4E"></span></td><td><code>--success</code></td><td>(unique)</td><td class="role">Confirmation toasts</td></tr>
+    </tbody>
+  </table>
+</div>
+</body></html>

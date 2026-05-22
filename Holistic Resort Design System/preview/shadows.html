@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Shadows</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:28px 26px 32px;color:var(--ink);font-family:var(--font-body)}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:10px}
+  h4{font-family:var(--font-display);font-weight:400;margin:0 0 24px;font-size:18px}
+  .row{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;align-items:end}
+  .sh{height:78px;background:#fff;border-radius:12px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;color:var(--stone)}
+  .lbl{font-family:var(--font-mono);font-size:10.5px;color:var(--stone);margin-top:10px;text-align:center}
+  .glow-day{background:#C68A3C;color:#fff;font-family:var(--font-italic);font-style:italic}
+  .glow-night{background:#0B0F1A;color:#F2E8C8;font-family:var(--font-italic);font-style:italic}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Foundations · Elevation</div>
+  <h4>Shadows — warm brown on light, pure black on dark</h4>
+  <div class="row">
+    <div><div class="sh" style="box-shadow:var(--shadow-1)">1</div><div class="lbl">--shadow-1</div></div>
+    <div><div class="sh" style="box-shadow:var(--shadow-2)">2</div><div class="lbl">--shadow-2 · default card</div></div>
+    <div><div class="sh" style="box-shadow:var(--shadow-3)">3</div><div class="lbl">--shadow-3 · hover</div></div>
+    <div><div class="sh" style="box-shadow:var(--shadow-4)">4</div><div class="lbl">--shadow-4 · modal</div></div>
+    <div><div class="sh glow-day" style="box-shadow:0 0 32px rgba(198,138,60,0.55)">day</div><div class="lbl">glow · day</div></div>
+    <div><div class="sh glow-night" style="box-shadow:0 0 36px rgba(212,220,235,0.40)">night</div><div class="lbl">glow · night</div></div>
+  </div>
+</div>
+</body></html>

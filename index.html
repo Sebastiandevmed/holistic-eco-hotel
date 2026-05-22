@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holistic Eco · Hotel — Proyecto</title>
+  <meta name="description" content="Landing page, design system y experimentos del proyecto Holistic Eco·Hotel.">
+  <link rel="stylesheet" href="Holistic Resort Design System/colors_and_type.css">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bone);
+      color: var(--ink);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 72px 24px 96px; flex: 1; width: 100%; }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--forest); opacity: 0.75; margin: 0 0 14px;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(40px, 8vw, 76px);
+      line-height: 1.02; margin: 0 0 18px; letter-spacing: 0.01em;
+    }
+    .lede { font-size: var(--fs-body-lg); max-width: 56ch; color: var(--fg-muted); margin: 0 0 56px; }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    a.card {
+      display: flex; flex-direction: column;
+      text-decoration: none; color: inherit;
+      background: var(--bg-elevated, #fff);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 26px;
+      transition: transform var(--dur-base, .25s) var(--ease-luxury, ease),
+                  box-shadow var(--dur-base, .25s) var(--ease-luxury, ease),
+                  border-color var(--dur-base, .25s) ease;
+    }
+    a.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-glow-day, 0 18px 50px rgba(0,0,0,.12)); border-color: var(--forest); }
+    .card .tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--sage, var(--forest)); margin-bottom: 14px; }
+    .card h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--fg-muted); font-size: var(--fs-body-sm); line-height: 1.5; }
+    .card .go { margin-top: 18px; font-family: var(--font-mono); font-size: 12px; color: var(--forest); }
+    footer { border-top: 1px solid var(--divider, var(--border)); padding: 24px; text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--fg-subtle, var(--fg-muted)); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="eyebrow">Holistic Eco · Hotel</p>
+    <h1>Un retiro entre árboles</h1>
+    <p class="lede">Índice del proyecto: la página de marketing, el sistema de diseño completo y los experimentos. Elige por dónde empezar.</p>
+
+    <div class="grid">
+      <a class="card" href="Holistic Resort Design System/ui_kits/landing/index.html">
+        <span class="tag">Landing page</span>
+        <h2>Sitio de marketing</h2>
+        <p>Recreación hi-fi de la landing del hotel: hero día/noche, habitaciones, villas, antes/después del lobby y más. Pásale <code>?mode=day</code> o <code>?mode=night</code>.</p>
+        <span class="go">Abrir la landing →</span>
+      </a>
+
+      <a class="card" href="Holistic Resort Design System/preview/index.html">
+        <span class="tag">Design system</span>
+        <h2>Sistema de diseño</h2>
+        <p>Paletas, tipografía, botones, tarjetas, iconografía, sombras, espaciado y movimiento. 21 páginas de referencia.</p>
+        <span class="go">Ver los fundamentos →</span>
+      </a>
+
+      <a class="card" href="Viaje 2027/ruleta.html">
+        <span class="tag">Experimento</span>
+        <h2>Ruleta · Viaje 2027</h2>
+        <p>Una ruleta interactiva. Componente independiente y autocontenido.</p>
+        <span class="go">Girar la ruleta →</span>
+      </a>
+    </div>
+  </main>
+  <footer>Holistic Eco · Hotel — publicado con GitHub Pages</footer>
+</body>
+</html>

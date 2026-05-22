@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Holistic Eco · Hotel — Un retiro entre árboles</title>
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <style>
+    html, body { margin: 0; padding: 0; background: var(--bone); color: var(--ink); overflow-x: hidden; }
+    /* Avoid horizontal scrollbars from off-canvas elements */
+    body { font-family: var(--font-body); }
+    * { box-sizing: border-box; }
+    a { color: inherit; }
+    /* Mode-override banner so reviewers can flip day/night */
+    .modeSwitch {
+      position: fixed; bottom: 22px; left: 22px; z-index: 100;
+      background: rgba(11,15,26,0.78); color: var(--moon);
+      font-family: var(--font-mono); font-size: 11px;
+      padding: 8px 12px; border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 8px;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(242,232,200,0.2);
+    }
+    .modeSwitch a { color: var(--moon); opacity: 0.55; text-decoration: none; padding: 2px 8px; border-radius: 999px; }
+    .modeSwitch a.on { background: var(--moon); color: var(--midnight); opacity: 1; }
+    .modeSwitch a:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="primitives.jsx"></script>
+<script type="text/babel" src="SplashIntro.jsx"></script>
+<script type="text/babel" src="Navbar.jsx"></script>
+<script type="text/babel" src="HeroSection.jsx"></script>
+<script type="text/babel" src="WelcomeSection.jsx"></script>
+<script type="text/babel" src="RoomsShowcase.jsx"></script>
+<script type="text/babel" src="PoolAndVillas.jsx"></script>
+<script type="text/babel" src="LobbyBeforeAfter.jsx"></script>
+<script type="text/babel" src="BarSection.jsx"></script>
+<script type="text/babel" src="CtaSection.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+
+<script type="text/babel">
+  const { useState, useEffect } = React;
+
+  function App() {
+    const params = new URLSearchParams(location.search);
+    const forced = params.get('mode'); // 'day' | 'night' | null
+    const replaySplash = params.get('splash') === 'replay';
+    const [mode, setMode] = useState(forced || (() => {
+      const h = new Date().getHours();
+      return (h >= 18 || h < 6) ? 'night' : 'day';
+    })());
+
+    // If ?splash=replay was passed, clear the sessionStorage flag so it plays again.
+    if (replaySplash) sessionStorage.removeItem('holistic-splash-seen');
+
+    const [splashDone, setSplashDone] = useState(
+      sessionStorage.getItem('holistic-splash-seen') === '1'
+    );
+
+    useEffect(() => {
+      document.documentElement.dataset.timeMode = mode;
+      // Lock body scroll while splash is up
+      document.body.style.overflow = splashDone ? '' : 'hidden';
+      return () => { document.body.style.overflow = ''; };
+    }, [mode, splashDone]);
+
+    return (
+      <>
+        {!splashDone && <SplashIntro mode={mode} onDone={() => setSplashDone(true)} />}
+        <Navbar mode={mode} />
+        <HeroSection forceMode={mode} />
+        <WelcomeSection />
+        <RoomsShowcase />
+        <PoolMasonry />
+        <VillasSection />
+        <LobbyBeforeAfter />
+        <BarSection />
+        <CtaSection />
+        <Footer />
+
+        <div className="modeSwitch" role="group" aria-label="Cambiar modo">
+          <span style={{ opacity: 0.55, marginRight: 4 }}>UI kit</span>
+          <a href="?mode=day"   className={mode === 'day'   ? 'on' : ''} onClick={(e) => { e.preventDefault(); setMode('day'); }}>☀ día</a>
+          <a href="?mode=night" className={mode === 'night' ? 'on' : ''} onClick={(e) => { e.preventDefault(); setMode('night'); }}>☾ noche</a>
+          <span style={{ opacity: 0.3, margin: '0 4px' }}>·</span>
+          <a href="#" onClick={(e) => { e.preventDefault(); sessionStorage.removeItem('holistic-splash-seen'); setSplashDone(false); }} title="Replay splash intro">↻ splash</a>
+        </div>
+      </>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

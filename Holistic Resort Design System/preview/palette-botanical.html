@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Botanical greens</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:22px 24px;font-family:var(--font-body);color:var(--ink)}
+  .row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .sw{display:flex;flex-direction:column;gap:6px}
+  .chip{height:84px;border-radius:10px;border:1px solid var(--border);position:relative;overflow:hidden}
+  .chip::after{content:"";position:absolute;inset:auto 0 0 0;height:24px;background:linear-gradient(to top,rgba(0,0,0,0.18),transparent)}
+  .name{font-size:11px;letter-spacing:0.06em;font-weight:600;color:var(--ink)}
+  .hex{font-family:var(--font-mono);font-size:10.5px;color:var(--stone)}
+  .role{font-size:10.5px;color:var(--stone)}
+  h4{font-family:var(--font-display);font-weight:400;margin:0 0 14px;font-size:18px;letter-spacing:0.005em}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);margin-bottom:4px;font-weight:500}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Foundation · 02</div>
+  <h4>Botanical greens — foliage, canopy, pool reflection</h4>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:#2E3A28"></div><div class="name">Forest</div><div class="hex">#2E3A28</div><div class="role">Dark UI / shaded canopy</div></div>
+    <div class="sw"><div class="chip" style="background:#4E5B3C"></div><div class="name">Moss</div><div class="hex">#4E5B3C</div><div class="role">Brand green · primary</div></div>
+    <div class="sw"><div class="chip" style="background:#8FA17A"></div><div class="name">Sage</div><div class="hex">#8FA17A</div><div class="role">Sunlit foliage</div></div>
+    <div class="sw"><div class="chip" style="background:#B8C4A6"></div><div class="name">Eucalyptus</div><div class="hex">#B8C4A6</div><div class="role">Pool tile · soft</div></div>
+  </div>
+</div>
+</body></html>

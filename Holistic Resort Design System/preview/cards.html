@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:18px 22px;color:var(--ink);font-family:var(--font-body)}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:10px}
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .c{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-2);transition:all 320ms cubic-bezier(0.22,1,0.36,1)}
+  .c:hover{transform:translateY(-3px);box-shadow:var(--shadow-3)}
+  .c .ph{aspect-ratio:4/3;background-size:cover;background-position:center}
+  .c .body{padding:14px 16px 16px}
+  .c .tag{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:4px}
+  .c .ttl{font-family:var(--font-display);font-weight:400;font-size:20px;letter-spacing:0.005em;margin:0 0 4px;color:var(--ink)}
+  .c .meta{font-family:var(--font-mono);font-size:11px;color:var(--stone);display:flex;gap:10px;align-items:center;margin-top:6px}
+  .c .meta b{color:var(--ink);font-weight:600;font-size:13px;font-family:var(--font-body)}
+  .c .meta .sep{color:var(--sand)}
+  .img1{background-image:url('../assets/Room1.jpg')}
+  .img2{background-image:url('../assets/Villages.jpg')}
+  .img3{background-image:url('../assets/Pool.jpg')}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Component · Cards · default rest</div>
+  <div class="row">
+    <div class="c"><div class="ph img1"></div><div class="body"><div class="tag">Habitación</div><h5 class="ttl">Suite Samán</h5><div class="meta"><span>2 huéspedes</span><span class="sep">·</span><span>34 m²</span><span class="sep">·</span><b>desde $420</b></div></div></div>
+    <div class="c"><div class="ph img2"></div><div class="body"><div class="tag">Villa</div><h5 class="ttl">Villa Ceiba</h5><div class="meta"><span>4 huéspedes</span><span class="sep">·</span><span>62 m²</span><span class="sep">·</span><b>desde $680</b></div></div></div>
+    <div class="c"><div class="ph img3"></div><div class="body"><div class="tag">Experiencia</div><h5 class="ttl">Atardecer en la piscina</h5><div class="meta"><span>Incluido</span><span class="sep">·</span><span>17:30 – 19:30</span></div></div></div>
+  </div>
+</div>
+</body></html>

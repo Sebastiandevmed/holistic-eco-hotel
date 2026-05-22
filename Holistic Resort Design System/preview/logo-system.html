@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Logo system</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:18px 22px;color:var(--ink);font-family:var(--font-body)}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:12px}
+  .row{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:14px;align-items:stretch}
+  .swatch{padding:18px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid var(--border);min-height:120px}
+  .swatch img{height:60px;width:auto;object-fit:contain;mix-blend-mode:multiply}
+  .swatch.dark img{mix-blend-mode:screen;filter:invert(1) brightness(1.1) contrast(0.9)}
+  .swatch.green{background:#2E3A28}
+  .swatch.green img{mix-blend-mode:screen;filter:invert(1) brightness(1.05)}
+  .swatch.ink{background:#1A1714}
+  .swatch.ink img{mix-blend-mode:screen;filter:invert(1) brightness(1.05)}
+  .lbl{font-family:var(--font-mono);font-size:10.5px;color:var(--stone)}
+  .swatch.dark .lbl,.swatch.green .lbl,.swatch.ink .lbl{color:#D9C7A7}
+  .wordmark{font-family:var(--font-brand);font-weight:400;font-size:24px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink)}
+  .wm-tag{font-family:var(--font-body);font-size:9px;letter-spacing:0.45em;text-transform:uppercase;color:var(--stone);margin-top:6px;font-weight:500}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Brand · Logo system</div>
+  <div class="row">
+    <div class="swatch" style="background:#F6F1E7;align-items:flex-start;justify-content:center"><div class="wordmark">Holistic</div><div class="wm-tag">Eco · Hotel</div><div class="lbl" style="margin-top:10px">Wordmark · on bone</div></div>
+    <div class="swatch" style="background:#fff"><img src="../assets/logo-mark.jpg" alt="mark"><div class="lbl">Mark · on white</div></div>
+    <div class="swatch ink"><img src="../assets/logo-mark.jpg" alt="mark"><div class="lbl">Mark · on ink</div></div>
+    <div class="swatch green"><img src="../assets/logo-mark.jpg" alt="mark"><div class="lbl">Mark · on forest</div></div>
+  </div>
+</div>
+</body></html>

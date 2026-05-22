@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Spacing & radii</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:22px 26px;color:var(--ink);font-family:var(--font-body)}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:10px}
+  h4{font-family:var(--font-display);font-weight:400;margin:0 0 14px;font-size:18px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .scale{display:flex;flex-direction:column;gap:6px}
+  .bar{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--stone);font-family:var(--font-mono)}
+  .bar i{height:10px;background:var(--moss);border-radius:2px;display:block}
+  .radii{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .rChip{aspect-ratio:1.4/1;background:var(--linen);display:flex;align-items:flex-end;justify-content:flex-start;padding:8px 10px;font-size:10.5px;color:var(--stone);font-family:var(--font-mono);border:1px solid var(--border)}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Foundations · Spacing & radii</div>
+  <div class="cols">
+    <div>
+      <h4>Spacing — 8px base</h4>
+      <div class="scale">
+        <div class="bar"><i style="width:4px"></i><span>--space-1 · 4</span></div>
+        <div class="bar"><i style="width:8px"></i><span>--space-2 · 8</span></div>
+        <div class="bar"><i style="width:12px"></i><span>--space-3 · 12</span></div>
+        <div class="bar"><i style="width:16px"></i><span>--space-4 · 16</span></div>
+        <div class="bar"><i style="width:24px"></i><span>--space-5 · 24</span></div>
+        <div class="bar"><i style="width:32px"></i><span>--space-6 · 32</span></div>
+        <div class="bar"><i style="width:48px"></i><span>--space-7 · 48</span></div>
+        <div class="bar"><i style="width:64px"></i><span>--space-8 · 64</span></div>
+        <div class="bar"><i style="width:96px"></i><span>--space-9 · 96</span></div>
+        <div class="bar"><i style="width:128px"></i><span>--space-10 · 128</span></div>
+      </div>
+    </div>
+    <div>
+      <h4>Radii — no sharp corners</h4>
+      <div class="radii">
+        <div class="rChip" style="border-radius:4px">xs · 4</div>
+        <div class="rChip" style="border-radius:8px">sm · 8</div>
+        <div class="rChip" style="border-radius:14px">md · 14</div>
+        <div class="rChip" style="border-radius:24px">lg · 24</div>
+        <div class="rChip" style="border-radius:40px">xl · 40</div>
+        <div class="rChip" style="border-radius:999px">pill · ∞</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

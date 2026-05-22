@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Imagery</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;padding:0;background:var(--bone)}
+  .card{padding:18px 22px;color:var(--ink);font-family:var(--font-body)}
+  .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px}
+  .ph{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:14px;overflow:hidden;position:relative}
+  .grid .ph:first-child{aspect-ratio:auto;grid-row:span 2;min-height:100%}
+  .ph .cap{position:absolute;left:14px;bottom:12px;color:#fff;font-family:var(--font-italic);font-style:italic;font-weight:300;font-size:18px;text-shadow:0 1px 8px rgba(0,0,0,0.5)}
+  .ph .grad{position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(to top,rgba(0,0,0,0.55),transparent);pointer-events:none}
+  .img1{background-image:url('../assets/Hero.jpg')}
+  .img2{background-image:url('../assets/Villages.jpg')}
+  .img3{background-image:url('../assets/Bar.jpg')}
+  .img4{background-image:url('../assets/HeroNight.jpg')}
+  .img5{background-image:url('../assets/Pool.jpg')}
+</style></head>
+<body>
+<div class="card">
+  <div class="eyebrow">Foundations · Imagery · always full-bleed, never floating</div>
+  <div class="grid">
+    <div class="ph img1"><div class="grad"></div><div class="cap">Día — sin filtros</div></div>
+    <div class="ph img2"><div class="grad"></div></div>
+    <div class="ph img3"><div class="grad"></div></div>
+    <div class="ph img4"><div class="grad"></div><div class="cap">Noche — solo overlay</div></div>
+    <div class="ph img5"><div class="grad"></div></div>
+  </div>
+</div>
+</body></html>
