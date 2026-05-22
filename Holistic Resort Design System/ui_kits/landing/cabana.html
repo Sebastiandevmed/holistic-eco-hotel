@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La cabaña — Holistic Eco · Hotel</title>
+  <meta name="description" content="Una sola cabaña entre los árboles: 2 huéspedes, 38 m², cama king, ducha y bañera dentro y vista directa a la selva.">
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <style>
+    html, body { margin: 0; padding: 0; background: var(--bone); color: var(--ink); overflow-x: hidden; }
+    body { font-family: var(--font-body); }
+    * { box-sizing: border-box; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="primitives.jsx"></script>
+<script type="text/babel" src="siteShell.jsx"></script>
+<script type="text/babel" src="Navbar.jsx"></script>
+<script type="text/babel" src="TheCabin.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+
+<script type="text/babel">
+  function App() {
+    const [mode, setMode] = useTimeMode();
+    return (
+      <>
+        <Navbar mode={mode} />
+        <PageHero
+          eyebrow="El alojamiento"
+          title="La cabaña"
+          lead="Una sola cabaña, la misma para todos, abierta a la selva."
+          image="../../assets/Villages.jpg"
+          mode={mode}
+        />
+        <TheCabin />
+
+        {/* Slim CTA strip → reservas */}
+        <section style={{ background: 'var(--midnight)', color: 'var(--moon)', padding: 'clamp(48px, 8vw, 88px) 24px' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 24, alignItems: 'center', justifyContent: 'space-between' }}>
+            <div>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 'clamp(1.8rem, 1.3rem + 2vw, 2.8rem)', margin: 0, lineHeight: 1.1 }}>¿Lista tu escapada?</h2>
+              <p style={{ fontFamily: 'var(--font-italic)', fontStyle: 'italic', fontWeight: 300, fontSize: '1.15rem', color: 'rgba(242,232,200,0.85)', margin: '10px 0 0' }}>Solo quedan algunas fechas para esta temporada.</p>
+            </div>
+            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+              <ReserveButton variant="nightFill">Reservar ahora</ReserveButton>
+              <Button variant="night" href="reservas.html" arrow={false}>Ver reservas</Button>
+            </div>
+          </div>
+        </section>
+
+        <Footer />
+        <ModeSwitch mode={mode} setMode={setMode} />
+      </>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

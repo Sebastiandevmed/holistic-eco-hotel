@@ -34,8 +34,7 @@ function CtaSection() {
         </p>
         <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
           <ReserveButton variant="nightFill">Reservar ahora</ReserveButton>
-          {/* TODO: reemplazar por el número real de WhatsApp del hotel */}
-          <Button variant="night" href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">Contáctanos</Button>
+          <Button variant="night" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Contáctanos</Button>
         </div>
         <div style={{ marginTop: 30, fontFamily: 'var(--font-mono)', fontSize: 12, color: 'rgba(242,232,200,0.55)', letterSpacing: '0.05em' }}>
           Solo quedan <b style={{ color: 'var(--moon)', fontWeight: 600 }}>3 cabañas</b> para diciembre.
