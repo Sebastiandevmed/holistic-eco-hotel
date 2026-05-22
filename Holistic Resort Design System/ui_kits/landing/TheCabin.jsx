@@ -4,14 +4,14 @@ const { useState } = React;
 // All cabins are identical: there is a single accommodation type, shown here
 // from many angles (interiors + exteriors) rather than as distinct units.
 function TheCabin() {
-  const gallery = ['Room1.jpg', 'Room5.jpg', 'Room3.jpg', 'RoomOut.jpg', 'Room7.jpg', 'RoomOut2.jpg'];
+  const gallery = ['Room1.jpg', 'Room5.jpg', 'Room8.jpg', 'RoomOut.jpg', 'Room7.jpg', 'Room2.jpg'];
   const amenities = [
-    'Terraza privada con hamaca',
-    'Ducha al aire libre',
+    'Ducha y bañera dentro de la cabaña',
     'Aire acondicionado',
     'Wifi de fibra óptica',
     'Cafetera y minibar',
     'Vista directa a la selva',
+    'Ropa de cama de lino',
   ];
 
   return (
@@ -20,7 +20,7 @@ function TheCabin() {
         <SectionHeading
           eyebrow="02 · La cabaña"
           title="Una sola cabaña. La misma para todos, entre los árboles."
-          lead="Sin categorías ni jerarquías: cada huésped duerme en la misma cabaña de madera, abierta a la selva."
+          lead="Sin categorías ni jerarquías: cada huésped duerme en la misma cabaña, abierta a la selva."
         />
       </div>
 

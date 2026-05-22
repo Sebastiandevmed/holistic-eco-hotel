@@ -30,9 +30,9 @@ function LobbyBeforeAfter() {
     <section style={{ background: 'var(--bone)', padding: 'clamp(64px, 10vw, 128px) 24px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto 48px' }}>
         <SectionHeading
-          eyebrow="04 · Lobby & recepción"
-          title="Dos lobbies. Un solo gesto."
-          lead="Una recepción que es también sala de estar. Arrastra para ver el detalle del interiorismo."
+          eyebrow="04 · La piscina"
+          title="La piscina, de día y de noche."
+          lead="El mismo refugio de agua antes y después del atardecer. Arrastra para pasar del día a la noche."
         />
       </div>
       <div
@@ -50,8 +50,8 @@ function LobbyBeforeAfter() {
         onMouseDown={(e) => { dragging.current = true; const r = ref.current.getBoundingClientRect(); setPos(Math.max(0, Math.min(1, (e.clientX - r.left) / r.width))); }}
         onTouchStart={(e) => { dragging.current = true; }}
       >
-        <img src="../../assets/LobbyRes.jpg" alt="Lobby — lado A" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-        <img src="../../assets/LobbyRes2.jpg" alt="Lobby — lado B" style={{
+        <img src="../../assets/Pool7.jpg" alt="La piscina de día" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+        <img src="../../assets/HeroNight.jpg" alt="La piscina de noche" style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
           clipPath: `inset(0 0 0 ${pos * 100}%)`,
         }} />
@@ -72,15 +72,15 @@ function LobbyBeforeAfter() {
         </div>
 
         {/* Labels */}
-        <span style={{ position: 'absolute', top: 18, left: 22, fontFamily: 'var(--font-body)', fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 600, color: '#fff', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>Lobby — recepción</span>
-        <span style={{ position: 'absolute', top: 18, right: 22, fontFamily: 'var(--font-body)', fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 600, color: '#fff', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>Lobby — salón</span>
+        <span style={{ position: 'absolute', top: 18, left: 22, fontFamily: 'var(--font-body)', fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 600, color: '#fff', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>Día</span>
+        <span style={{ position: 'absolute', top: 18, right: 22, fontFamily: 'var(--font-body)', fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 600, color: '#fff', textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>Noche</span>
       </div>
 
       {/* Thumb with reflection */}
       <div style={{ maxWidth: 1280, margin: '24px auto 0', display: 'flex', justifyContent: 'flex-end' }}>
         <div style={{ position: 'relative', width: 220 }}>
-          <img src="../../assets/LobbyRes3.jpg" alt="Lobby vista 3" style={{ width: '100%', height: 130, objectFit: 'cover', borderRadius: 12, display: 'block' }} />
-          <img src="../../assets/LobbyRes3.jpg" alt="" aria-hidden style={{ width: '100%', height: 60, objectFit: 'cover', objectPosition: 'bottom', transform: 'scaleY(-1)', borderRadius: '0 0 12px 12px', opacity: 0.25, marginTop: -2, maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.5), transparent)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.5), transparent)' }} />
+          <img src="../../assets/Pool4.jpg" alt="La piscina al atardecer" style={{ width: '100%', height: 130, objectFit: 'cover', borderRadius: 12, display: 'block' }} />
+          <img src="../../assets/Pool4.jpg" alt="" aria-hidden style={{ width: '100%', height: 60, objectFit: 'cover', objectPosition: 'bottom', transform: 'scaleY(-1)', borderRadius: '0 0 12px 12px', opacity: 0.25, marginTop: -2, maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.5), transparent)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.5), transparent)' }} />
         </div>
       </div>
     </section>

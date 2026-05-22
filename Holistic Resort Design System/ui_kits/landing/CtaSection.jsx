@@ -30,14 +30,15 @@ function CtaSection() {
           Tu escape <em style={{ fontStyle: 'italic' }}>te espera</em>.
         </h2>
         <p style={{ fontFamily: 'var(--font-italic)', fontStyle: 'italic', fontWeight: 300, fontSize: 'clamp(1.25rem, 1rem + 1vw, 1.625rem)', color: 'rgba(242,232,200,0.85)', lineHeight: 1.5, margin: '0 auto 36px', maxWidth: 520 }}>
-          Cinco hectáreas, ocho suites, cinco villas. Solo quedan algunas fechas para esta temporada.
+          Cinco hectáreas de selva y un puñado de cabañas, todas iguales. Solo quedan algunas fechas para esta temporada.
         </p>
         <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
           <ReserveButton variant="nightFill">Reservar ahora</ReserveButton>
-          <Button variant="night" href="#contact-modal">Contáctanos</Button>
+          {/* TODO: reemplazar por el número real de WhatsApp del hotel */}
+          <Button variant="night" href="https://wa.me/0000000000" target="_blank" rel="noopener noreferrer">Contáctanos</Button>
         </div>
         <div style={{ marginTop: 30, fontFamily: 'var(--font-mono)', fontSize: 12, color: 'rgba(242,232,200,0.55)', letterSpacing: '0.05em' }}>
-          Solo quedan <b style={{ color: 'var(--moon)', fontWeight: 600 }}>3 villas</b> para diciembre.
+          Solo quedan <b style={{ color: 'var(--moon)', fontWeight: 600 }}>3 cabañas</b> para diciembre.
         </div>
       </div>
     </section>

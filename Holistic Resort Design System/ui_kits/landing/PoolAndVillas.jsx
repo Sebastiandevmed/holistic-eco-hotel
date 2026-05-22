@@ -1,6 +1,6 @@
 /* global React, SectionHeading */
 
-// Common areas (pool, river, outdoor kitchens) — the shared spaces of the resort.
+// Common areas (pool, river, outdoor kitchen) — the shared spaces of the resort.
 function PoolMasonry() {
   const photos = [
     { src: 'Pool.jpg',   cls: 'big',  cap: 'La piscina principal' },
@@ -22,7 +22,7 @@ function PoolMasonry() {
         <SectionHeading
           eyebrow="03 · Zonas comunes"
           title="Agua, sombra, silencio."
-          lead="Las zonas que todos compartimos: una piscina en forma de gota, hamacas y dos cocinas frente al río."
+          lead="Las zonas que todos compartimos: una piscina en forma de gota, hamacas y una cocina frente al río."
         />
       </div>
       <div style={{
