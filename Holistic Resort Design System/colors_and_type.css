@@ -104,8 +104,8 @@
   --bg-inverse:   var(--charcoal);
 
   --fg:           var(--ink);
-  --fg-muted:     var(--stone);
-  --fg-subtle:    #9A8B76;
+  --fg-muted:     #5E5142;   /* darkened from --stone for legibility on cream */
+  --fg-subtle:    #7A6B58;   /* was #9A8B76 — too light on bone, now = old --stone */
   --fg-inverse:   var(--bone);
   --fg-on-accent: #FFFFFF;
 

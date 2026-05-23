@@ -25,12 +25,12 @@ function Footer() {
           </div>
           <div>
             <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 600, opacity: 0.6, marginBottom: 14 }}>Visítanos</div>
-            <div style={{ opacity: 0.85 }}>Vereda La Esperanza<br />Mariquita, Tolima<br />Colombia</div>
+            <div style={{ opacity: 0.85 }}>Corregimiento · kilómetro 13<br />San Nicolás, Sopetrán<br />Antioquia, Colombia</div>
           </div>
           <div>
             <div style={{ fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 600, opacity: 0.6, marginBottom: 14 }}>Contacto</div>
             <div style={{ opacity: 0.85 }}>
-              <a href="tel:+5713000000" style={{ color: 'inherit', textDecoration: 'none', display: 'block' }}>+57 (1) 300 000 0000</a>
+              <a href="tel:+573126565474" style={{ color: 'inherit', textDecoration: 'none', display: 'block' }}>+57 312 6565474</a>
               <a href="mailto:reservas@holistic.com" style={{ color: 'inherit', textDecoration: 'none', display: 'block' }}>reservas@holistic.com</a>
             </div>
           </div>

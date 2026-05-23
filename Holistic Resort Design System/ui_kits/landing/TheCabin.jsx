@@ -7,6 +7,7 @@ function TheCabin() {
   const gallery = ['Room1.jpg', 'Room5.jpg', 'Room8.jpg', 'RoomOut.jpg', 'Room7.jpg', 'Room2.jpg'];
   const amenities = [
     'Ducha y bañera dentro de la cabaña',
+    'Agua caliente en la cabaña',
     'Aire acondicionado',
     'Wifi de fibra óptica',
     'Cafetera y minibar',
@@ -64,8 +65,8 @@ function TheCabin() {
           </ul>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 18 }}>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--fg-muted)' }}>desde</span>
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 400, color: 'var(--fg)' }}>$480</span>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--fg-muted)' }}>/ noche</span>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: 34, fontWeight: 400, color: 'var(--fg)' }}>$490.000</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--fg-muted)' }}>COP / noche</span>
           </div>
           <ReserveButton variant="primary">Reservar la cabaña</ReserveButton>
         </aside>

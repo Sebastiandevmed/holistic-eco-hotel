@@ -134,8 +134,7 @@ function Button({ variant = 'primary', children, onClick, href, mode = 'day', ar
 }
 
 const LOBBYPMS_URL = 'https://holistic.lobbypms.com';
-// TODO: reemplazar por el número real de WhatsApp del hotel
-const WHATSAPP_URL = 'https://wa.me/0000000000';
+const WHATSAPP_URL = 'https://wa.me/573126565474';
 
 function ReserveButton({ variant = 'primary', children = 'Reservar', ...rest }) {
   return <Button variant={variant} href={LOBBYPMS_URL} {...rest}>{children}</Button>;

@@ -23,30 +23,43 @@ function useTimeMode() {
 }
 
 function ModeSwitch({ mode, setMode, onReplaySplash }) {
+  const SunIcon = (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  );
+  const MoonIcon = (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  );
   return (
-    <div className="modeSwitch" role="group" aria-label="Cambiar modo">
-      <span style={{ opacity: 0.55, marginRight: 4 }}>UI kit</span>
-      <a href="?mode=day" className={mode === 'day' ? 'on' : ''} onClick={(e) => { e.preventDefault(); setMode('day'); }}>☀ día</a>
-      <a href="?mode=night" className={mode === 'night' ? 'on' : ''} onClick={(e) => { e.preventDefault(); setMode('night'); }}>☾ noche</a>
+    <div className="modeSwitch" role="group" aria-label="Cambiar modo día / noche">
+      <button type="button" aria-label="Modo día" aria-pressed={mode === 'day'} className={mode === 'day' ? 'on' : ''} onClick={() => setMode('day')}>{SunIcon}</button>
+      <button type="button" aria-label="Modo noche" aria-pressed={mode === 'night'} className={mode === 'night' ? 'on' : ''} onClick={() => setMode('night')}>{MoonIcon}</button>
       {onReplaySplash ? (
-        <>
-          <span style={{ opacity: 0.3, margin: '0 4px' }}>·</span>
-          <a href="#" onClick={(e) => { e.preventDefault(); onReplaySplash(); }} title="Repetir intro">↻ splash</a>
-        </>
+        <button type="button" className="splash" title="Repetir intro" aria-label="Repetir intro" onClick={onReplaySplash}>↻</button>
       ) : null}
       <style>{`
         .modeSwitch {
           position: fixed; bottom: 22px; left: 22px; z-index: 100;
-          background: rgba(5,7,14,0.82); color: var(--moon);
-          font-family: var(--font-mono); font-size: 11px;
-          padding: 8px 12px; border-radius: 999px;
-          display: inline-flex; align-items: center; gap: 8px;
+          background: rgba(5,7,14,0.82);
+          padding: 4px; border-radius: 999px;
+          display: inline-flex; align-items: center; gap: 2px;
           backdrop-filter: blur(12px);
           border: 1px solid rgba(242,232,200,0.2);
         }
-        .modeSwitch a { color: var(--moon); opacity: 0.55; text-decoration: none; padding: 2px 8px; border-radius: 999px; }
-        .modeSwitch a.on { background: var(--moon); color: var(--midnight); opacity: 1; }
-        .modeSwitch a:hover { opacity: 1; }
+        .modeSwitch button {
+          appearance: none; background: transparent; border: none; cursor: pointer;
+          color: var(--moon); opacity: 0.5;
+          width: 30px; height: 30px; padding: 0; border-radius: 999px;
+          display: inline-flex; align-items: center; justify-content: center;
+          transition: opacity 200ms, background 200ms, color 200ms;
+        }
+        .modeSwitch button:hover { opacity: 1; }
+        .modeSwitch button.on { background: var(--moon); color: var(--midnight); opacity: 1; }
+        .modeSwitch button.splash { font-family: var(--font-mono); font-size: 15px; }
       `}</style>
     </div>
   );

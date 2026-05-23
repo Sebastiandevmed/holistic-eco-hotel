@@ -44,7 +44,7 @@ function CommunitySection() {
             ¡Gracias! Ya eres parte de la comunidad.
           </div>
         ) : (
-          <form onSubmit={submit} noValidate className="community-form" style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <form onSubmit={submit} noValidate className="community-form" style={{ display: 'flex', gap: 24, justifyContent: 'center', alignItems: 'flex-end', flexWrap: 'wrap', maxWidth: 440, margin: '0 auto' }}>
             <input
               type="email"
               value={email}
@@ -52,24 +52,28 @@ function CommunitySection() {
               placeholder="tu@correo.com"
               aria-label="Tu correo electrónico"
               aria-invalid={!!error}
+              className="community-input"
               style={{
-                flex: '1 1 280px', maxWidth: 360,
-                fontFamily: 'var(--font-body)', fontSize: 15,
-                padding: '14px 18px', borderRadius: 999,
-                border: error ? '1px solid #E5897A' : '1px solid rgba(242,232,200,0.35)',
-                background: 'rgba(255,255,255,0.06)', color: 'var(--moon)',
+                flex: '1 1 220px',
+                fontFamily: 'var(--font-body)', fontSize: 16,
+                padding: '10px 2px', borderRadius: 0,
+                border: 'none',
+                borderBottom: error ? '1px solid #E5897A' : '1px solid rgba(242,232,200,0.4)',
+                background: 'transparent', color: 'var(--moon)',
                 outline: 'none',
               }}
             />
-            <button type="submit" style={{
-              fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14, letterSpacing: '0.04em',
-              padding: '14px 30px', borderRadius: 999, border: 'none', cursor: 'pointer',
-              background: 'var(--moon)', color: 'var(--forest)',
-              transition: 'transform 200ms var(--ease-organic), box-shadow 200ms',
+            <button type="submit" className="community-submit" style={{
+              fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: 14, letterSpacing: '0.06em',
+              padding: '10px 2px', border: 'none', cursor: 'pointer',
+              background: 'transparent', color: 'var(--moon)',
+              borderBottom: '1px solid rgba(242,232,200,0.4)',
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              transition: 'border-color 200ms, gap 200ms',
             }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 6px 24px rgba(242,232,200,0.35)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; }}
-            >Unirme</button>
+              onMouseEnter={(e) => { e.currentTarget.style.gap = '12px'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.gap = '8px'; }}
+            >Unirme <span aria-hidden style={{ fontFamily: 'var(--font-display)' }}>→</span></button>
           </form>
         )}
         {error ? (
@@ -77,7 +81,9 @@ function CommunitySection() {
         ) : null}
       </div>
       <style>{`
-        .community-form input::placeholder { color: rgba(242,232,200,0.5); }
+        .community-form input::placeholder { color: rgba(242,232,200,0.45); }
+        .community-input:focus { border-bottom-color: var(--moon) !important; }
+        .community-submit:hover { border-bottom-color: var(--moon) !important; }
       `}</style>
     </section>
   );
