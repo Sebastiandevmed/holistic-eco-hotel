@@ -17,8 +17,9 @@ function PoolMasonry() {
   ];
 
   return (
-    <section id="Zonas comunes" style={{ background: 'var(--linen)', padding: 'clamp(64px, 10vw, 128px) 24px' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto 56px' }}>
+    <section id="Zonas comunes" style={{ background: 'transparent', padding: 'clamp(64px, 10vw, 128px) 24px', position: 'relative', overflow: 'hidden' }}>
+      <ParallaxBackdrop image="../../assets/Pool3.jpg" />
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1280, margin: '0 auto 56px' }}>
         <SectionHeading
           eyebrow="03 · Zonas comunes"
           title="Agua, sombra, silencio."
@@ -26,6 +27,7 @@ function PoolMasonry() {
         />
       </div>
       <div style={{
+        position: 'relative', zIndex: 1,
         maxWidth: 1280, margin: '0 auto',
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',

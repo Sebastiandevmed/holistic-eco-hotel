@@ -88,12 +88,14 @@
   --gold:       #D4A857;   /* highlight / metallic shimmer in logo */
   --coral:      #C97B5C;   /* sunset pink, secondary warm accent */
 
-  /* Night palette (pulled from HeroNight.jpg + candle-lit pool) */
-  --midnight:   #0B0F1A;   /* deepest night sky */
-  --indigo:     #1A2440;   /* navbar / scrim at night */
-  --twilight:   #3D4A6B;   /* dusk haze */
-  --silver:     #D4DCEB;   /* moonlight type on dark */
-  --moon:       #F2E8C8;   /* candle-amber pinpoint */
+  /* Night palette (pulled from HeroNight.jpg + candle-lit pool) — deepened
+     for a darker, more nocturnal ambience, with bone/cream type that reads
+     like candlelight against the night sky. */
+  --midnight:   #05070E;   /* deepest night sky — near-black with faint indigo */
+  --indigo:     #0E1428;   /* navbar / scrim at night */
+  --twilight:   #2A3450;   /* dusk haze */
+  --silver:     #ECE3CF;   /* moonlight type on dark — warm bone/cream */
+  --moon:       #F4ECCF;   /* candle-amber pinpoint — warm cream accent */
 
   /* ---------- SEMANTIC TOKENS — LIGHT (day) ---------- */
   --bg:           var(--bone);
@@ -129,6 +131,15 @@
   --shadow-4: 0 24px 64px rgba(42,37,32,0.22), 0 8px 16px rgba(42,37,32,0.08);
   --shadow-glow-day:   0 0 32px rgba(198,138,60,0.35);
   --shadow-glow-night: 0 0 36px rgba(212,220,235,0.30);
+
+  /* ---------- GLASS & PARALLAX SECTION BACKDROPS ----------
+     Sections that used to be flat bone/white now sit over a parallax photo;
+     --section-scrim is the readability veil, the --glass-* set styles the
+     frosted cards that float on top. Both flip with the theme. */
+  --section-scrim: linear-gradient(180deg, rgba(246,241,231,0.60) 0%, rgba(246,241,231,0.80) 100%);
+  --glass-bg:      rgba(255,255,255,0.58);
+  --glass-border:  rgba(42,37,32,0.12);
+  --glass-blur:    blur(20px) saturate(140%);
 
   --ease-organic:  cubic-bezier(0.22, 1, 0.36, 1);   /* primary — slow exit */
   --ease-luxury:   cubic-bezier(0.65, 0, 0.35, 1);   /* sigmoid for hovers */
@@ -185,35 +196,43 @@
   --fs-hero:    clamp(4.5rem, 2.5rem + 9vw, 11rem);
 }
 
-/* ---------- DARK / NIGHT THEME ---------- */
+/* ---------- DARK / NIGHT THEME ----------
+   Activates from EITHER attribute: the design-system uses [data-theme],
+   while the marketing site flips [data-time-mode] by the hour / ?mode=. */
 :root[data-theme="night"],
-[data-theme="night"] {
+[data-theme="night"],
+:root[data-time-mode="night"],
+[data-time-mode="night"] {
   --bg:           var(--midnight);
-  --bg-elevated:  #131A2B;
+  --bg-elevated:  #121A30;
   --bg-muted:     var(--indigo);
   --bg-inverse:   var(--bone);
 
   --fg:           var(--silver);
-  --fg-muted:     #98A3BA;
-  --fg-subtle:    #5E6B82;
+  --fg-muted:     #B4AA90;
+  --fg-subtle:    #7B735E;
   --fg-inverse:   var(--ink);
   --fg-on-accent: var(--midnight);
 
-  --border:       rgba(212,220,235,0.10);
-  --border-strong:rgba(212,220,235,0.22);
-  --divider:      rgba(212,220,235,0.10);
+  --border:       rgba(236,227,207,0.12);
+  --border-strong:rgba(236,227,207,0.24);
+  --divider:      rgba(236,227,207,0.10);
 
   --accent:       var(--moon);
-  --accent-hover: #FFF1C8;
-  --accent-soft:  rgba(242,232,200,0.10);
+  --accent-hover: #FFF3D2;
+  --accent-soft:  rgba(244,236,207,0.10);
 
   --brand:        var(--silver);
-  --brand-soft:   rgba(212,220,235,0.08);
+  --brand-soft:   rgba(236,227,207,0.08);
 
-  --shadow-1: 0 1px 2px rgba(0,0,0,0.40), 0 1px 1px rgba(0,0,0,0.30);
-  --shadow-2: 0 4px 12px rgba(0,0,0,0.50);
-  --shadow-3: 0 12px 32px rgba(0,0,0,0.55);
-  --shadow-4: 0 24px 64px rgba(0,0,0,0.65);
+  --section-scrim: linear-gradient(180deg, rgba(5,7,14,0.64) 0%, rgba(5,7,14,0.86) 100%);
+  --glass-bg:      rgba(18,26,48,0.46);
+  --glass-border:  rgba(236,227,207,0.16);
+
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.50), 0 1px 1px rgba(0,0,0,0.40);
+  --shadow-2: 0 4px 14px rgba(0,0,0,0.60);
+  --shadow-3: 0 14px 36px rgba(0,0,0,0.66);
+  --shadow-4: 0 26px 68px rgba(0,0,0,0.74);
 }
 
 /* ==========================================================================

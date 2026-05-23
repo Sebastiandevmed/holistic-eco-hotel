@@ -7,7 +7,7 @@ function Footer() {
       padding: '96px 24px 44px',
     }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-        <div style={{ height: 1, background: 'rgba(212,220,235,0.16)', marginBottom: 56 }} />
+        <div style={{ height: 1, background: 'rgba(236,227,207,0.16)', marginBottom: 56 }} />
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, minmax(0,1fr))',
@@ -45,7 +45,7 @@ function Footer() {
 
         <div style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          marginTop: 56, paddingTop: 24, borderTop: '1px solid rgba(212,220,235,0.12)',
+          marginTop: 56, paddingTop: 24, borderTop: '1px solid rgba(236,227,207,0.12)',
           fontFamily: 'var(--font-mono)', fontSize: 11, opacity: 0.55, letterSpacing: '0.05em',
         }} className="footer-bottom">
           <div>© 2026 Holistic Eco · Hotel — todos los derechos reservados.</div>

@@ -7,8 +7,8 @@
   <meta name="description" content="Reserva tu cabaña en Holistic Eco·Hotel. Desde $480 / noche. Disponibilidad en línea por LobbyPMS o contacto directo por WhatsApp.">
   <link rel="stylesheet" href="../../colors_and_type.css">
   <style>
-    html, body { margin: 0; padding: 0; background: var(--bone); color: var(--ink); overflow-x: hidden; }
-    body { font-family: var(--font-body); }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); overflow-x: hidden; }
+    body { font-family: var(--font-body); transition: background 600ms var(--ease-organic), color 600ms var(--ease-organic); }
     * { box-sizing: border-box; }
     a { color: inherit; }
   </style>
@@ -20,7 +20,12 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
+<!-- GSAP — scroll-driven parallax + reveals (loads before the Babel components) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script type="text/babel" src="primitives.jsx"></script>
+<script type="text/babel" src="parallax.jsx"></script>
 <script type="text/babel" src="siteShell.jsx"></script>
 <script type="text/babel" src="Navbar.jsx"></script>
 <script type="text/babel" src="CtaSection.jsx"></script>
@@ -39,8 +44,9 @@
       'Ropa de cama de lino',
     ];
     return (
-      <section style={{ background: 'var(--bone)', padding: 'clamp(56px, 9vw, 112px) 24px' }}>
-        <div className="res-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 40, alignItems: 'start' }}>
+      <section style={{ background: 'transparent', padding: 'clamp(56px, 9vw, 112px) 24px', position: 'relative', overflow: 'hidden' }}>
+        <ParallaxBackdrop image="../../assets/Villages4.jpg" />
+        <div className="res-grid" style={{ position: 'relative', zIndex: 1, maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 40, alignItems: 'start' }}>
           <div>
             <SectionHeading
               eyebrow="Reservar"
@@ -49,15 +55,15 @@
             />
             <ul style={{ listStyle: 'none', margin: '28px 0 0', padding: 0, display: 'grid', gap: 12 }}>
               {amenities.map((a) => (
-                <li key={a} style={{ display: 'flex', gap: 10, alignItems: 'center', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--ink)' }}>
-                  <span style={{ color: 'var(--moss)', display: 'inline-flex', flex: '0 0 auto' }}><IconLucide d="M20 6L9 17l-5-5" size={18} /></span>
+                <li key={a} style={{ display: 'flex', gap: 10, alignItems: 'center', fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--fg)' }}>
+                  <span style={{ color: 'var(--brand)', display: 'inline-flex', flex: '0 0 auto' }}><IconLucide d="M20 6L9 17l-5-5" size={18} /></span>
                   {a}
                 </li>
               ))}
             </ul>
           </div>
 
-          <aside style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '30px 28px', boxShadow: 'var(--shadow-2)' }}>
+          <aside style={{ background: 'var(--glass-bg)', WebkitBackdropFilter: 'var(--glass-blur)', backdropFilter: 'var(--glass-blur)', border: '1px solid var(--glass-border)', borderRadius: 'var(--radius-lg)', padding: '30px 28px', boxShadow: 'var(--shadow-2)' }}>
             <div style={{ fontFamily: 'var(--font-body)', fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--fg-muted)', fontWeight: 600 }}>La cabaña</div>
             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--fg-muted)', display: 'flex', gap: 10, flexWrap: 'wrap', margin: '10px 0 18px' }}>
               <span>2 huéspedes</span><span style={{ opacity: 0.4 }}>·</span><span>38 m²</span><span style={{ opacity: 0.4 }}>·</span><span>1 cama king</span>
@@ -65,7 +71,7 @@
             <div style={{ height: 1, background: 'var(--divider, var(--border))', margin: '0 0 18px' }} />
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 22 }}>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--fg-muted)' }}>desde</span>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 40, fontWeight: 400, color: 'var(--ink)' }}>$480</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 40, fontWeight: 400, color: 'var(--fg)' }}>$480</span>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--fg-muted)' }}>/ noche</span>
             </div>
             <div style={{ display: 'grid', gap: 12 }}>

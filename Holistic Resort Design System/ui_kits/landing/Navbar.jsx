@@ -27,7 +27,7 @@ function Navbar({ mode = 'day' }) {
 
   const isNight = mode === 'night';
   const bg = scrolled
-    ? (isNight ? 'rgba(11,15,26,0.78)' : 'rgba(246,241,231,0.82)')
+    ? (isNight ? 'rgba(5,7,14,0.85)' : 'rgba(246,241,231,0.82)')
     : 'transparent';
   const fg = scrolled
     ? (isNight ? 'var(--silver)' : 'var(--ink)')
@@ -102,7 +102,7 @@ function Navbar({ mode = 'day' }) {
       {/* Drop-down menu (the only way to navigate on mobile, where nav-links are hidden) */}
       <div style={{
         position: 'absolute', top: '100%', left: 0, right: 0,
-        background: isNight ? 'rgba(11,15,26,0.96)' : 'rgba(246,241,231,0.97)',
+        background: isNight ? 'rgba(5,7,14,0.97)' : 'rgba(246,241,231,0.97)',
         color: isNight ? 'var(--silver)' : 'var(--ink)',
         backdropFilter: 'blur(20px) saturate(160%)',
         WebkitBackdropFilter: 'blur(20px) saturate(160%)',

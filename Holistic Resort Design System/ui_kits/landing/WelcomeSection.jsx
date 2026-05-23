@@ -4,11 +4,14 @@ const { useEffect, useRef } = React;
 function WelcomeSection() {
   return (
     <section id="El lugar" style={{
-      background: 'var(--bone)',
+      background: 'transparent',
       padding: 'clamp(80px, 12vw, 160px) 24px',
       position: 'relative',
+      overflow: 'hidden',
     }}>
+      <ParallaxBackdrop image="../../assets/Villages2.jpg" />
       <div style={{
+        position: 'relative', zIndex: 1,
         maxWidth: 1280, margin: '0 auto',
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr)',
@@ -36,10 +39,10 @@ function WelcomeSection() {
 
         {/* Right column row 2 — paragraph */}
         <div style={{ alignSelf: 'center', padding: '8px 0' }}>
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, lineHeight: 1.7, color: 'var(--ink)', margin: 0 }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, lineHeight: 1.7, color: 'var(--fg)', margin: 0 }}>
             Despertarás con el canto del río. Almorzarás bajo la palapa. Descalzo por la piscina al atardecer, sin que nadie te apure.
           </p>
-          <p style={{ fontFamily: 'var(--font-italic)', fontStyle: 'italic', fontSize: 18, color: 'var(--moss)', margin: '14px 0 0' }}>
+          <p style={{ fontFamily: 'var(--font-italic)', fontStyle: 'italic', fontSize: 18, color: 'var(--brand)', margin: '14px 0 0' }}>
             — Una pausa entre el verde.
           </p>
         </div>

@@ -27,8 +27,9 @@ function LobbyBeforeAfter() {
   }, []);
 
   return (
-    <section style={{ background: 'var(--bone)', padding: 'clamp(64px, 10vw, 128px) 24px' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto 48px' }}>
+    <section style={{ background: 'transparent', padding: 'clamp(64px, 10vw, 128px) 24px', position: 'relative', overflow: 'hidden' }}>
+      <ParallaxBackdrop image="../../assets/LobbyRes.jpg" />
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1280, margin: '0 auto 48px' }}>
         <SectionHeading
           eyebrow="04 · La piscina"
           title="La piscina, de día y de noche."
@@ -39,7 +40,7 @@ function LobbyBeforeAfter() {
         ref={ref}
         style={{
           maxWidth: 1280, margin: '0 auto',
-          position: 'relative',
+          position: 'relative', zIndex: 1,
           aspectRatio: '16 / 9',
           borderRadius: 24,
           overflow: 'hidden',
@@ -77,7 +78,7 @@ function LobbyBeforeAfter() {
       </div>
 
       {/* Thumb with reflection */}
-      <div style={{ maxWidth: 1280, margin: '24px auto 0', display: 'flex', justifyContent: 'flex-end' }}>
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1280, margin: '24px auto 0', display: 'flex', justifyContent: 'flex-end' }}>
         <div style={{ position: 'relative', width: 220 }}>
           <img src="../../assets/Pool4.jpg" alt="La piscina al atardecer" style={{ width: '100%', height: 130, objectFit: 'cover', borderRadius: 12, display: 'block' }} />
           <img src="../../assets/Pool4.jpg" alt="" aria-hidden style={{ width: '100%', height: 60, objectFit: 'cover', objectPosition: 'bottom', transform: 'scaleY(-1)', borderRadius: '0 0 12px 12px', opacity: 0.25, marginTop: -2, maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.5), transparent)', WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.5), transparent)' }} />

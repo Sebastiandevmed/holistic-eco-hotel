@@ -10,18 +10,19 @@
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; }
     body {
-      background: var(--bone);
-      color: var(--ink);
+      background: var(--bg);
+      color: var(--fg);
       font-family: var(--font-body);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      transition: background 600ms var(--ease-organic), color 600ms var(--ease-organic);
     }
     .wrap { max-width: 980px; margin: 0 auto; padding: 72px 24px 96px; flex: 1; width: 100%; }
     .eyebrow {
       font-family: var(--font-mono);
       font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--forest); opacity: 0.75; margin: 0 0 14px;
+      color: var(--brand); opacity: 0.75; margin: 0 0 14px;
     }
     h1 {
       font-family: var(--font-display);
@@ -46,7 +47,7 @@
     .card .tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--sage, var(--forest)); margin-bottom: 14px; }
     .card h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; margin: 0 0 8px; }
     .card p { margin: 0; color: var(--fg-muted); font-size: var(--fs-body-sm); line-height: 1.5; }
-    .card .go { margin-top: 18px; font-family: var(--font-mono); font-size: 12px; color: var(--forest); }
+    .card .go { margin-top: 18px; font-family: var(--font-mono); font-size: 12px; color: var(--brand); }
     footer { border-top: 1px solid var(--divider, var(--border)); padding: 24px; text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--fg-subtle, var(--fg-muted)); }
   </style>
 </head>
@@ -80,5 +81,15 @@
     </div>
   </main>
   <footer>Holistic Eco · Hotel — publicado con GitHub Pages</footer>
+  <script>
+    // Match the rest of the site: day/night by ?mode= or the current hour.
+    (function () {
+      var forced = new URLSearchParams(location.search).get('mode');
+      var mode = (forced === 'day' || forced === 'night')
+        ? forced
+        : ((new Date().getHours() >= 18 || new Date().getHours() < 6) ? 'night' : 'day');
+      document.documentElement.dataset.timeMode = mode;
+    })();
+  </script>
 </body>
 </html>

@@ -7,8 +7,8 @@
   <meta name="description" content="Galería de Holistic Eco·Hotel: la cabaña por dentro y por fuera, las zonas comunes y la piscina de día y de noche.">
   <link rel="stylesheet" href="../../colors_and_type.css">
   <style>
-    html, body { margin: 0; padding: 0; background: var(--bone); color: var(--ink); overflow-x: hidden; }
-    body { font-family: var(--font-body); }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); overflow-x: hidden; }
+    body { font-family: var(--font-body); transition: background 600ms var(--ease-organic), color 600ms var(--ease-organic); }
     * { box-sizing: border-box; }
     a { color: inherit; }
   </style>
@@ -20,7 +20,12 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
+<!-- GSAP — scroll-driven parallax + reveals (loads before the Babel components) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script type="text/babel" src="primitives.jsx"></script>
+<script type="text/babel" src="parallax.jsx"></script>
 <script type="text/babel" src="siteShell.jsx"></script>
 <script type="text/babel" src="Navbar.jsx"></script>
 <script type="text/babel" src="PoolAndVillas.jsx"></script>
@@ -33,15 +38,16 @@
   function CabinGallery() {
     const photos = ['Room1.jpg', 'Room5.jpg', 'Room8.jpg', 'Room2.jpg', 'Room7.jpg', 'Room4.jpg', 'RoomOut.jpg', 'RoomOut2.jpg', 'Room6.jpg'];
     return (
-      <section style={{ background: 'var(--bone)', padding: 'clamp(56px, 9vw, 112px) 24px 64px' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto 40px' }}>
+      <section style={{ background: 'transparent', padding: 'clamp(56px, 9vw, 112px) 24px 64px', position: 'relative', overflow: 'hidden' }}>
+        <ParallaxBackdrop image="../../assets/Room3.jpg" />
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: 1280, margin: '0 auto 40px' }}>
           <SectionHeading
             eyebrow="01 · La cabaña"
             title="Por dentro y por fuera."
             lead="La misma cabaña para todos: dormitorio, baño con ducha y bañera, y su lugar entre los árboles."
           />
         </div>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="gal-grid">
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="gal-grid">
           {photos.map((src, i) => (
             <figure key={i} style={{ margin: 0, borderRadius: 14, overflow: 'hidden', aspectRatio: '4 / 3', boxShadow: 'var(--shadow-1)', cursor: 'zoom-in', transition: 'transform 380ms var(--ease-organic), box-shadow 380ms' }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.03)'; e.currentTarget.style.boxShadow = 'var(--shadow-3)'; }}

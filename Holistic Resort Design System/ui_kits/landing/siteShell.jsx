@@ -37,7 +37,7 @@ function ModeSwitch({ mode, setMode, onReplaySplash }) {
       <style>{`
         .modeSwitch {
           position: fixed; bottom: 22px; left: 22px; z-index: 100;
-          background: rgba(11,15,26,0.78); color: var(--moon);
+          background: rgba(5,7,14,0.82); color: var(--moon);
           font-family: var(--font-mono); font-size: 11px;
           padding: 8px 12px; border-radius: 999px;
           display: inline-flex; align-items: center; gap: 8px;

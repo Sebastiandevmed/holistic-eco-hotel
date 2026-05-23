@@ -7,8 +7,8 @@
   <meta name="description" content="Holistic Eco·Hotel: una sola cabaña entre los árboles, zonas comunes y piscina de día y de noche. Cinco hectáreas de selva en Mariquita, Tolima.">
   <link rel="stylesheet" href="../../colors_and_type.css">
   <style>
-    html, body { margin: 0; padding: 0; background: var(--bone); color: var(--ink); overflow-x: hidden; }
-    body { font-family: var(--font-body); }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); overflow-x: hidden; }
+    body { font-family: var(--font-body); transition: background 600ms var(--ease-organic), color 600ms var(--ease-organic); }
     * { box-sizing: border-box; }
     a { color: inherit; }
   </style>
@@ -20,7 +20,12 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
+<!-- GSAP — scroll-driven parallax + reveals (loads before the Babel components) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script type="text/babel" src="primitives.jsx"></script>
+<script type="text/babel" src="parallax.jsx"></script>
 <script type="text/babel" src="siteShell.jsx"></script>
 <script type="text/babel" src="SplashIntro.jsx"></script>
 <script type="text/babel" src="Navbar.jsx"></script>
@@ -28,6 +33,7 @@
 <script type="text/babel" src="WelcomeSection.jsx"></script>
 <script type="text/babel" src="HomeTeasers.jsx"></script>
 <script type="text/babel" src="BarSection.jsx"></script>
+<script type="text/babel" src="PublicationsSection.jsx"></script>
 <script type="text/babel" src="CommunitySection.jsx"></script>
 <script type="text/babel" src="PromoPopup.jsx"></script>
 <script type="text/babel" src="Footer.jsx"></script>
@@ -57,6 +63,7 @@
         <WelcomeSection />
         <HomeTeasers />
         <BarSection />
+        <PublicationsSection />
         <CommunitySection />
         <Footer />
         <PromoPopup active={splashDone} />

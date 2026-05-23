@@ -9,13 +9,13 @@ function CtaSection() {
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       padding: '120px 24px',
       overflow: 'hidden',
-      background: '#0B0F1A',
+      background: 'var(--midnight)',
     }}>
       <img src="../../assets/DroneHero.jpg" alt="" aria-hidden style={{
         position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover',
-        opacity: 0.45,
+        opacity: 0.38,
       }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(11,15,26,0.55), rgba(11,15,26,0.85))' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(5,7,14,0.6), rgba(5,7,14,0.9))' }} />
 
       <div style={{ position: 'relative', textAlign: 'center', maxWidth: 760, color: 'var(--moon)' }}>
         <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, letterSpacing: '0.32em', textTransform: 'uppercase', fontWeight: 500, color: 'rgba(242,232,200,0.7)' }}>

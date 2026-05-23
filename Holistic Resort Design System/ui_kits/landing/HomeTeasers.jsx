@@ -26,8 +26,9 @@ function HomeTeasers() {
   ];
 
   return (
-    <section style={{ background: 'var(--linen)', padding: 'clamp(64px, 10vw, 128px) 24px' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto 56px' }}>
+    <section style={{ background: 'transparent', padding: 'clamp(64px, 10vw, 128px) 24px', position: 'relative', overflow: 'hidden' }}>
+      <ParallaxBackdrop image="../../assets/Pool6.jpg" />
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: 1280, margin: '0 auto 56px' }}>
         <SectionHeading
           eyebrow="02 · El sitio"
           title="Explora Holistic."
@@ -35,6 +36,7 @@ function HomeTeasers() {
         />
       </div>
       <div style={{
+        position: 'relative', zIndex: 1,
         maxWidth: 1280, margin: '0 auto',
         display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24,
       }} className="teaser-grid">
@@ -42,13 +44,14 @@ function HomeTeasers() {
           <a key={c.href} href={c.href} style={{
             display: 'flex', flexDirection: 'column',
             textDecoration: 'none', color: 'inherit',
-            background: '#fff', border: '1px solid var(--border)',
+            background: 'var(--glass-bg)', WebkitBackdropFilter: 'var(--glass-blur)', backdropFilter: 'var(--glass-blur)',
+            border: '1px solid var(--glass-border)',
             borderRadius: 'var(--radius-lg)', overflow: 'hidden',
-            boxShadow: 'var(--shadow-1)',
+            boxShadow: 'var(--shadow-2)',
             transition: 'transform 380ms var(--ease-organic), box-shadow 380ms',
           }}
           onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = 'var(--shadow-3)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = 'var(--shadow-1)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = 'var(--shadow-2)'; }}
           >
             <div style={{ aspectRatio: '4 / 3', overflow: 'hidden' }}>
               <img src={c.img} alt={c.title} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
@@ -57,7 +60,7 @@ function HomeTeasers() {
               <div style={{ fontFamily: 'var(--font-body)', fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--fg-muted)', fontWeight: 600 }}>{c.tag}</div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 400, fontSize: 28, margin: '8px 0 10px' }}>{c.title}</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 14.5, lineHeight: 1.6, color: 'var(--fg-muted)', margin: '0 0 18px' }}>{c.text}</p>
-              <span style={{ marginTop: 'auto', fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--forest, var(--moss))' }}>Ver {c.title.toLowerCase()} →</span>
+              <span style={{ marginTop: 'auto', fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--brand)' }}>Ver {c.title.toLowerCase()} →</span>
             </div>
           </a>
         ))}
